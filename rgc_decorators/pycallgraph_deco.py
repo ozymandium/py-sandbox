@@ -5,7 +5,7 @@ Does not terminate after single iteration
 currently Python v2.7.3
 """
 try:
-    import pycallgraph
+    import pycallgraph, sys
 except ImportError:
     print('You do not have pycallgraph installed')
     sys.exit()
