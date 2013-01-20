@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Infix operator class for 2 inputs
 
+
 class Infix:
     """
     definition:
@@ -30,14 +31,32 @@ class Infix:
         return self.function(value1, value2)
 
 
-# Examples:
-add = Infix(lambda x,y: x+y)
-z = 2 |add| 3
-print z
+# an infixed operator for the partial class in functools
+# used for currying
+from functools import partial
+part = Infix(partial)
 
 
-def f(x,y):
-    return x+y
-F = Infix(f)
-z = 2 |F| 3
-print z
+if __name__ == '__main__':
+    # Examples:
+    add = Infix(lambda x,y: x+y)
+    print 2 |add| 3
+
+
+    def f(x,y):
+        return x+y
+    F = Infix(f)
+    print 2 |F| 3
+
+
+    @Infix
+    def add(x,y):
+        return x+y
+    print 2 |add| 3
+
+
+    def add(x,y,z):
+        return x+y+z
+    f = add |part| 2 |part| 3 |part| 4
+    print f()
+
