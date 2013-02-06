@@ -15,7 +15,8 @@ IF(Boost_FOUND)
   SET(Boost_USE_STATIC_LIBS OFF)
   SET(Boost_USE_MULTITHREADED ON)
   SET(Boost_USE_STATIC_RUNTIME OFF)
-  FIND_PACKAGE(Boost 1.45.0 COMPONENTS python)
+  # use the boost version supported by ROS Fuerte
+  FIND_PACKAGE(Boost 1.46.1 COMPONENTS python)
   # This package is meant to be built in a build directory
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ..)
   ADD_LIBRARY(yay SHARED yay.cxx)

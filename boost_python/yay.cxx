@@ -1,12 +1,40 @@
 #include <boost/python.hpp>
+#ifndef _YAY
+#define _YAY
 
-char const* yay()
-{
-  return "Yay!";
-}
+char const* yay() { return "Yay!"; }
 
-BOOST_PYTHON_MODULE(libyay)
+struct World{
+    void set(std::string msg) { this->msg = msg; }
+    std::string greet() { return msg; }
+    std::string msg;
+};
+
+class WorldClass {
+public:
+    WorldClass() { this->msg = "Yay for classes!"; }
+    ~WorldClass() { std::cout << "Goodbye!\n"; }
+    void set(std::string msg) { this->msg = msg; }
+    std::string greet() { return msg; }
+// private:
+    std::string msg;
+};
+
+#endif
+
+BOOST_PYTHON_MODULE(libyay) // this name is what you will import
 {
-  using namespace boost::python;
-  def("yay", yay);
+    using namespace boost::python;
+    
+    def("yay", yay);
+
+    class_<World>("World")
+        .def("greet", &World::greet)
+        .def("set", &World::set)
+    ;
+
+    class_<WorldClass>("WorldClass")
+        .def("greet", &WorldClass::greet)
+        .def("set", &WorldClass::set)
+    ;
 }
