@@ -2,6 +2,7 @@ Boost.Python Examples
 =====================
 
 - currently only supports python 2.7.3
+- This directory invisible to the rest of the sandbox, serves as an example only
 
 Building
 ========

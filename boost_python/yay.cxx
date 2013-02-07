@@ -1,7 +1,6 @@
-#include <boost/python.hpp>
 #ifndef _YAY
 #define _YAY
-
+// c++ source
 char const* yay() { return "Yay!"; }
 
 struct World{
@@ -22,9 +21,10 @@ public:
 
 #endif
 
+// make a python interface
+#include <boost/python.hpp>
 BOOST_PYTHON_MODULE(libyay) // this name is what you will import
-{
-    using namespace boost::python;
+{   using namespace boost::python;
     
     def("yay", yay);
 
@@ -32,7 +32,7 @@ BOOST_PYTHON_MODULE(libyay) // this name is what you will import
         .def("greet", &World::greet)
         .def("set", &World::set)
     ;
-
+    
     class_<WorldClass>("WorldClass")
         .def("greet", &WorldClass::greet)
         .def("set", &WorldClass::set)
