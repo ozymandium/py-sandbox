@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-"""Some usage examples in python"""
+"""Some usage examples in python
+    since only the c++ library is installed (this file not part of an installed module),
+    you will not be able to install/import this file
+"""
 import libyay
 from pprint import pprint as pp
 

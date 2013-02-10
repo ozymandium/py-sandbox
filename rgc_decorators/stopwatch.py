@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 from __future__ import print_function
+from opt_arg_dec import opt_arg_dec
 
 def stopwatch(fn):
     """decorator that prints the time it takes for a function to execute"""
     from time import clock
-    # before = float()
 
     def wrapper(*args, **kwargs):
         before = clock()
