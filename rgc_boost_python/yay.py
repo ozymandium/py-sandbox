@@ -1,7 +1,10 @@
 #!/usr/bin/env python
-"""Some usage examples in python
+"""Some usage examples in python for local (manual) installation.
     since only the c++ library is installed (this file not part of an installed module),
     you will not be able to install/import this file
+    
+    if using setup.py installation, do:
+        `from rgc_boost_python.libyay import *`
 """
 import libyay
 from pprint import pprint as pp
