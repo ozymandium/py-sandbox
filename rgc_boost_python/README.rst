@@ -3,6 +3,7 @@ Boost.Python Examples
 
 - currently only supports python 2.7.3
 - make sure your library names agree whether built locally or via setup.py (which now works)
+- still have a few compiler warnings to work out in the setuptools install
 
 Building Locally by Hand
 ========================
