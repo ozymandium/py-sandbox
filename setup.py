@@ -10,7 +10,8 @@ setup(  name='py_sandbox',
 
         packages=[  'rgc_decorators',
                     'rgc_operators',
-                    'rgc_types'
+                    'rgc_types',
+                    'rgc_utils'
         ],
 
         # py_modules=['rgc_decorators',
