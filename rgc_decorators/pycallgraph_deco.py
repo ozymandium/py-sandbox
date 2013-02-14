@@ -4,8 +4,9 @@ Decorator for making python function call graphs
 Does not terminate after single iteration
 currently Python v2.7.3
 """
+import sys
 try:
-    import pycallgraph, sys
+    import pycallgraph
 except ImportError:
     print('You do not have pycallgraph installed')
     sys.exit()
