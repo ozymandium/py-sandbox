@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "print_hook.py", line 94, in <module>
+    compile(',','<string>','exec')
+  File "<string>", line 1
+    ,
+    ^
+SyntaxError: invalid syntax
